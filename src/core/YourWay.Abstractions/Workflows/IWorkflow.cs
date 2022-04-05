@@ -12,5 +12,5 @@ public interface IWorkflow
 
     ICollection<Transition> Transitions { get; set; }
 
-    Task ExecuteAsync(WorkflowExecutionContext workflowExecutionContext);
+    Task ExecuteAsync(WorkflowExecutionContext workflowExecutionContext, CancellationToken cancellationToken);
 }

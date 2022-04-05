@@ -13,5 +13,7 @@ public interface IStep
 
     string Description { get; set; }
 
-    ValueTask<IStepExecutionResult> ExecuteAsync(StepExecutionContext context, CancellationToken cancellationToken);
+    bool IsEntryPoint { get; set; }
+
+    ValueTask<IStepExecutionResult> ExecuteAsync(ActivityExecutionContext activityExecutionContext, StepExecutionContext context, CancellationToken cancellationToken);
 }

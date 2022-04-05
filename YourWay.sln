@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E12B7FA0-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A4468EC6-700D-4E2B-91D1-4AF1D8897CA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.HellowWorld", "src\samples\Console.HellowWorld\Console.HellowWorld.csproj", "{472D03DD-51EE-4D76-8BFB-EB430584C94A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console.HelloWorld", "src\samples\Console.HelloWorld\Console.HelloWorld.csproj", "{472D03DD-51EE-4D76-8BFB-EB430584C94A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

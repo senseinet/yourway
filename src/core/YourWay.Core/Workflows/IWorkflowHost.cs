@@ -6,5 +6,5 @@ public interface IWorkflowHost
 {
     ICollection<IWorkflow> Workflows { get; set; }
 
-    Task ExecuteWorkflows();
+    Task ExecuteWorkflows(CancellationToken cancellationToken);
 }

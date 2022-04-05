@@ -1,7 +1,7 @@
 using YourWay.Abstractions.Activities;
 using YourWay.Abstractions.Steps;
 
-namespace Console.HellowWorld.Activities;
+namespace Console.HelloWorld.Activities;
 
 public class WriteLineActivity : Activity
 {
