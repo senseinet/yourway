@@ -5,7 +5,8 @@ namespace YourWay.Steps;
 
 public class NoopStepExecutionResult : StepExecutionResult
 {
-    public override ValueTask ExecuteAsync(StepExecutionContext stepExecutionContext, CancellationToken cancellationToken)
+    public override ValueTask ExecuteAsync(StepExecutionContext stepExecutionContext,
+        CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

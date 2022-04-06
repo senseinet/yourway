@@ -2,7 +2,7 @@ namespace YourWay.Models;
 
 public class Variables : Dictionary<string, Variable>
 {
-    public static readonly Variables Empty = new Variables();
+    public static readonly Variables Empty = new();
 
     public Variables()
     {
@@ -17,7 +17,7 @@ public class Variables : Dictionary<string, Variable>
         foreach (var item in dictionary)
             this[item.Key] = item.Value;
     }
-        
+
     public Variables(IEnumerable<KeyValuePair<string, object>> dictionary)
     {
         foreach (var item in dictionary)
@@ -31,10 +31,10 @@ public class Variables : Dictionary<string, Variable>
 
     public T GetVariable<T>(string name)
     {
-        object value = GetVariable(name);
-        return (value != default) 
-            ? (T)System.Convert.ChangeType(value, typeof(T))
-            : default(T);
+        var value = GetVariable(name);
+        return value != default
+            ? (T) Convert.ChangeType(value, typeof(T))
+            : default;
     }
 
     public Variable SetVariable(string name, object value)
@@ -47,8 +47,10 @@ public class Variables : Dictionary<string, Variable>
         return SetVariable(name, variable.Value);
     }
 
-    public void SetVariables(Variables variables) =>
+    public void SetVariables(Variables variables)
+    {
         SetVariables((IEnumerable<KeyValuePair<string, Variable>>) variables);
+    }
 
     public void SetVariables(IEnumerable<KeyValuePair<string, Variable>> variables)
     {

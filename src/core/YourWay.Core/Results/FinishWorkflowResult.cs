@@ -22,5 +22,5 @@ public class FinishWorkflowResult : ActivityExecutionResult
             logger);
 
         workflowContext.Finish();
-    } 
+    }
 }

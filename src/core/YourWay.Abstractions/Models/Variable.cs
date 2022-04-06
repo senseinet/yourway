@@ -10,6 +10,6 @@ public class Variable
     {
         Value = value;
     }
-    
+
     public object Value { get; set; }
 }

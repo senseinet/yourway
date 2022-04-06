@@ -8,6 +8,6 @@ public class YourWayBuilder
     {
         Services = services;
     }
-        
+
     public IServiceCollection Services { get; }
 }

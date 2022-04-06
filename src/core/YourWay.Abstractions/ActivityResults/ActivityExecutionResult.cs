@@ -5,7 +5,8 @@ namespace YourWay.ActivityResults;
 
 public abstract class ActivityExecutionResult : IActivityExecutionResult
 {
-    public virtual ValueTask ExecuteAsync(IWorkflowRunner runner, WorkflowExecutionContext workflowContext, CancellationToken cancellationToken)
+    public virtual ValueTask ExecuteAsync(IWorkflowRunner runner, WorkflowExecutionContext workflowContext,
+        CancellationToken cancellationToken)
     {
         Execute(runner, workflowContext);
         return ValueTask.CompletedTask;

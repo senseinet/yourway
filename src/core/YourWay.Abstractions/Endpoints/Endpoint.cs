@@ -12,6 +12,6 @@ public class Endpoint
     {
         Activity = activity;
     }
-        
+
     public IActivity Activity { get; set; }
 }

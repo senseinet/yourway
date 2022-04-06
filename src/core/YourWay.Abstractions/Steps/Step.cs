@@ -15,7 +15,8 @@ public class Step : IStep
 
     public bool IsEntryPoint { get; set; }
 
-    public virtual ValueTask<IStepExecutionResult> ExecuteAsync(ActivityExecutionContext activityExecutionContext, StepExecutionContext context, CancellationToken cancellationToken)
+    public virtual ValueTask<IStepExecutionResult> ExecuteAsync(ActivityExecutionContext activityExecutionContext,
+        StepExecutionContext context, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

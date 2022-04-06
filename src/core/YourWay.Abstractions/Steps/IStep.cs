@@ -15,5 +15,6 @@ public interface IStep
 
     bool IsEntryPoint { get; set; }
 
-    ValueTask<IStepExecutionResult> ExecuteAsync(ActivityExecutionContext activityExecutionContext, StepExecutionContext context, CancellationToken cancellationToken);
+    ValueTask<IStepExecutionResult> ExecuteAsync(ActivityExecutionContext activityExecutionContext,
+        StepExecutionContext context, CancellationToken cancellationToken);
 }

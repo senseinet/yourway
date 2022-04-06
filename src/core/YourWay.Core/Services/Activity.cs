@@ -6,9 +6,18 @@ namespace YourWay.Services;
 
 public abstract class Activity : ActivityBase
 {
-    protected ActivityExecutionResult Outcomes(IEnumerable<OutcomeResultName> names) => new OutcomeResult(names);
-    
-    protected ActivityExecutionResult Outcome(OutcomeResultName name) => Outcomes(new[] { name });
-    
-    protected ActivityExecutionResult Done() => Outcome(OutcomeResultName.Done);
+    protected ActivityExecutionResult Outcomes(IEnumerable<OutcomeResultName> names)
+    {
+        return new OutcomeResult(names);
+    }
+
+    protected ActivityExecutionResult Outcome(OutcomeResultName name)
+    {
+        return Outcomes(new[] {name});
+    }
+
+    protected ActivityExecutionResult Done()
+    {
+        return Outcome(OutcomeResultName.Done);
+    }
 }

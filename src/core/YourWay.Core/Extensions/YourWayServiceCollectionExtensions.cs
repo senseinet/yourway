@@ -1,6 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using YourWay.Activities;
+using YourWay.Persistence;
 using YourWay.Services;
 using YourWay.WorkflowBuilders;
 using YourWay.WorkflowEventHandlers;
@@ -17,7 +18,17 @@ public static class YourWayServiceCollectionExtensions
         configuration.AddWorkflowsCore();
         configure?.Invoke(configuration);
 
+        EnsurePersistence(configuration);
+
         return services;
+    }
+
+    public static IServiceCollection AddActivity<T>(this IServiceCollection services)
+        where T : class, IActivity
+    {
+        return services
+            .AddTransient<T>()
+            .AddTransient<IActivity>(sp => sp.GetRequiredService<T>());
     }
 
     private static YourWayBuilder AddWorkflowsCore(this YourWayBuilder configuration)
@@ -28,20 +39,20 @@ public static class YourWayServiceCollectionExtensions
         services
             .AddLogging()
             .AddTransient<Func<IEnumerable<IActivity>>>(sp => sp.GetServices<IActivity>)
+            .AddTransient<IWorkflowFactory, WorkflowFactory>()
             .AddTransient<IWorkflowRegistry, WorkflowRegistry>()
             .AddScoped<IWorkflowEventHandler, PersistenceWorkflowEventHandler>()
+            .AddScoped<IActivityResolver, ActivityResolver>()
+            .AddScoped<IActivityRunner, ActivityRunner>()
             .AddScoped<IWorkflowRunner, WorkflowRunner>()
             .AddTransient<IWorkflowBuilder, WorkflowBuilder>()
             .AddTransient<Func<IWorkflowBuilder>>(sp => sp.GetRequiredService<IWorkflowBuilder>);
 
         return configuration;
     }
-    
-    public static IServiceCollection AddActivity<T>(this IServiceCollection services)
-        where T : class, IActivity
+
+    private static void EnsurePersistence(YourWayBuilder configuration)
     {
-        return services
-            .AddTransient<T>()
-            .AddTransient<IActivity>(sp => sp.GetRequiredService<T>());
+        configuration.WithMemoryStores();
     }
 }

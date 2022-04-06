@@ -6,7 +6,8 @@ namespace YourWay.Services;
 
 public abstract class WorkflowEventHandlerBase : IWorkflowEventHandler
 {
-    public virtual ValueTask ActivityExecutedAsync(WorkflowExecutionContext workflowExecutionContext, IActivity activity,
+    public virtual ValueTask ActivityExecutedAsync(WorkflowExecutionContext workflowExecutionContext,
+        IActivity activity,
         CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
@@ -24,13 +25,15 @@ public abstract class WorkflowEventHandlerBase : IWorkflowEventHandler
         throw new NotImplementedException();
     }
 
-    public virtual ValueTask ActivityFaultedAsync(WorkflowExecutionContext workflowExecutionContext, IActivity activity, string message,
+    public virtual ValueTask ActivityFaultedAsync(WorkflowExecutionContext workflowExecutionContext, IActivity activity,
+        string message,
         CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
 
-    public virtual ValueTask ActivityAbortedAsync(WorkflowExecutionContext workflowExecutionContext, IActivity activity, string message,
+    public virtual ValueTask ActivityAbortedAsync(WorkflowExecutionContext workflowExecutionContext, IActivity activity,
+        string message,
         CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
@@ -54,29 +57,34 @@ public abstract class WorkflowEventHandlerBase : IWorkflowEventHandler
         throw new NotImplementedException();
     }
 
-    public virtual ValueTask StepFaultedAsync(ActivityExecutionContext activityExecutionContext, IStep step, string message,
+    public virtual ValueTask StepFaultedAsync(ActivityExecutionContext activityExecutionContext, IStep step,
+        string message,
         CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
 
-    public virtual ValueTask StepAbortedAsync(ActivityExecutionContext activityExecutionContext, IStep step, string message,
+    public virtual ValueTask StepAbortedAsync(ActivityExecutionContext activityExecutionContext, IStep step,
+        string message,
         CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
 
-    public virtual ValueTask WorkflowExecutedAsync(WorkflowExecutionContext workflowExecutionContext, CancellationToken cancellationToken)
+    public virtual ValueTask WorkflowExecutedAsync(WorkflowExecutionContext workflowExecutionContext,
+        CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
 
-    public virtual ValueTask WorkflowPausedAsync(WorkflowExecutionContext workflowExecutionContext, CancellationToken cancellationToken)
+    public virtual ValueTask WorkflowPausedAsync(WorkflowExecutionContext workflowExecutionContext,
+        CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
 
-    public virtual ValueTask WorkflowResumedAsync(WorkflowExecutionContext workflowExecutionContext, CancellationToken cancellationToken)
+    public virtual ValueTask WorkflowResumedAsync(WorkflowExecutionContext workflowExecutionContext,
+        CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

@@ -14,11 +14,12 @@ public class PersistenceWorkflowEventHandler : WorkflowEventHandlerBase
         this.workflowInstanceStore = workflowInstanceStore;
     }
 
-    public override async ValueTask WorkflowExecutedAsync(WorkflowExecutionContext workflowExecutionContext, CancellationToken cancellationToken)
+    public override async ValueTask WorkflowExecutedAsync(WorkflowExecutionContext workflowExecutionContext,
+        CancellationToken cancellationToken)
     {
         await SaveWorkflowAsync(workflowExecutionContext.Workflow, cancellationToken);
     }
-    
+
     private async ValueTask SaveWorkflowAsync(Workflow workflow, CancellationToken cancellationToken)
     {
         var workflowInstance = workflow.ToInstance();

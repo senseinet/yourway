@@ -4,5 +4,4 @@ namespace YourWay.Results;
 
 public class StepResult : StepExecutionResult
 {
-    
 }

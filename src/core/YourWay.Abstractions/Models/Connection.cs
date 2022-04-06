@@ -10,12 +10,12 @@ public class Connection
     {
     }
 
-    public Connection(IActivity sourceActivity, IActivity targetActivity) 
+    public Connection(IActivity sourceActivity, IActivity targetActivity)
         : this(new SourceEndpoint(sourceActivity), new TargetEndpoint(targetActivity))
     {
     }
-        
-    public Connection(IActivity sourceActivity, IActivity targetActivity, OutcomeResultName sourceEndpointResultName) 
+
+    public Connection(IActivity sourceActivity, IActivity targetActivity, OutcomeResultName? sourceEndpointResultName)
         : this(new SourceEndpoint(sourceActivity, sourceEndpointResultName), new TargetEndpoint(targetActivity))
     {
     }

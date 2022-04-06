@@ -15,11 +15,11 @@ public class ActivityDefinition
         Type = type;
         Left = left;
         Top = top;
-        State = new JObject(state);
+        State = state != null ? new JObject(state) : new JObject();
     }
 
     public Guid Id { get; set; }
-    
+
     public string Type { get; set; }
 
     public string Name
@@ -29,12 +29,12 @@ public class ActivityDefinition
     }
 
     public string DisplayName { get; set; }
-    
+
     public string Description { get; set; }
-    
+
     public int Left { get; set; }
-    
+
     public int Top { get; set; }
-    
+
     public JObject State { get; set; }
 }

@@ -9,7 +9,7 @@ public class SourceEndpoint : Endpoint
     {
     }
 
-    public SourceEndpoint(IActivity activity, OutcomeResultName outcome = OutcomeResultName.Done) : base(activity)
+    public SourceEndpoint(IActivity activity, OutcomeResultName? outcome = OutcomeResultName.Done) : base(activity)
     {
         Outcome = outcome;
     }

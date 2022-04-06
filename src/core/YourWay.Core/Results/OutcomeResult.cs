@@ -9,7 +9,7 @@ using YourWay.Services;
 namespace YourWay.Results;
 
 /// <summary>
-/// Result that holds information about next activity to execute
+///     Result that holds information about next activity to execute
 /// </summary>
 public class OutcomeResult : ActivityExecutionResult
 {
@@ -17,7 +17,7 @@ public class OutcomeResult : ActivityExecutionResult
     {
         EndpointNames = endpointNames.ToList();
     }
-    
+
     public IReadOnlyList<OutcomeResultName> EndpointNames { get; }
 
     public override async ValueTask ExecuteAsync(IWorkflowRunner runner, WorkflowExecutionContext workflowContext,
@@ -26,22 +26,22 @@ public class OutcomeResult : ActivityExecutionResult
         var currentActivity = workflowContext.CurrentActivity;
 
         foreach (var endpointName in EndpointNames)
-        {
             ScheduleNextActivities(workflowContext, new SourceEndpoint(currentActivity, endpointName));
-        }
-        
+
         var eventHandlers = workflowContext.ServiceProvider.GetServices<IWorkflowEventHandler>();
         var logger = workflowContext.ServiceProvider.GetRequiredService<ILogger<OutcomeResult>>();
-        await eventHandlers.InvokeAsync(x => x.ActivityExecutedAsync(workflowContext, currentActivity, cancellationToken), logger);
+        await eventHandlers.InvokeAsync(
+            x => x.ActivityExecutedAsync(workflowContext, currentActivity, cancellationToken), logger);
     }
-    
+
     private void ScheduleNextActivities(WorkflowExecutionContext workflowContext, SourceEndpoint endpoint)
     {
         var completedActivity = workflowContext.CurrentActivity;
         var connections = workflowContext.Workflow.Connections.Where(x => x.Source.Activity == completedActivity &&
-                                                                          (x.Source.Outcome ?? OutcomeResultName.Done) == endpoint.Outcome);
+                                                                          (x.Source.Outcome ??
+                                                                           OutcomeResultName.Done) == endpoint.Outcome);
         var activities = connections.Select(x => x.Target.Activity);
-            
+
         workflowContext.ScheduleActivities(activities);
     }
 }

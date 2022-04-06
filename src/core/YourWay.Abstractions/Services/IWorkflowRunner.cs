@@ -7,58 +7,58 @@ namespace YourWay.Services;
 
 public interface IWorkflowRunner
 {
+    #region PAUSE
+
+    ValueTask<WorkflowExecutionContext> PauseAsync(
+        WorkflowInstance workflowInstance,
+        CancellationToken cancellationToken = default
+    );
+
+    #endregion
+
     #region START
 
-    Task<WorkflowExecutionContext> StartAsync(
+    ValueTask<WorkflowExecutionContext> StartAsync(
         Workflow workflow,
         IEnumerable<IActivity> startActivities = default,
         CancellationToken cancellationToken = default
     );
-    
-    Task<WorkflowExecutionContext> StartAsync(
+
+    ValueTask<WorkflowExecutionContext> StartAsync(
         WorkflowDefinitionVersion workflowDefinition,
         Variables input = default,
-        IEnumerable<string> startActivityIds = default,
-        string correlationId = default,
+        IEnumerable<Guid> startActivityIds = default,
+        Guid correlationId = default,
         CancellationToken cancellationToken = default
     );
-    
-    Task<WorkflowExecutionContext> StartAsync<T>(
+
+    ValueTask<WorkflowExecutionContext> StartAsync<T>(
         Variables input = default,
-        IEnumerable<string> startActivityIds = default,
-        string correlationId = default,
+        IEnumerable<Guid> startActivityIds = default,
+        Guid correlationId = default,
         CancellationToken cancellationToken = default) where T : IWorkflow, new();
-    
-    #endregion
-
-    #region PAUSE
-
-    Task<WorkflowExecutionContext> PauseAsync(
-        WorkflowInstance workflowInstance,
-        CancellationToken cancellationToken = default
-    );
 
     #endregion
 
     #region RESUME
 
-    Task<WorkflowExecutionContext> ResumeAsync(
+    ValueTask<WorkflowExecutionContext> ResumeAsync(
         Workflow workflow,
         IEnumerable<IActivity> startActivities = default,
         CancellationToken cancellationToken = default
     );
 
-    Task<WorkflowExecutionContext> ResumeAsync<T>(
+    ValueTask<WorkflowExecutionContext> ResumeAsync<T>(
         WorkflowInstance workflowInstance,
         Variables input = default,
-        IEnumerable<string> startActivityIds = default,
+        IEnumerable<Guid> startActivityIds = default,
         CancellationToken cancellationToken = default
     ) where T : IWorkflow, new();
 
-    Task<WorkflowExecutionContext> ResumeAsync(
+    ValueTask<WorkflowExecutionContext> ResumeAsync(
         WorkflowInstance workflowInstance,
         Variables input = default,
-        IEnumerable<string> startActivityIds = default,
+        IEnumerable<Guid> startActivityIds = default,
         CancellationToken cancellationToken = default
     );
 

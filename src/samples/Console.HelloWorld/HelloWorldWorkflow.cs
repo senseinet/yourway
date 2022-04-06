@@ -1,3 +1,4 @@
+using Console.HelloWorld.Activities;
 using YourWay.Services;
 using YourWay.Workflows;
 
@@ -9,6 +10,6 @@ public class HelloWorldWorkflow : IWorkflow
     {
         builder
             .StartWith<Activities.HelloWorld>()
-            .Then<Activities.GoodByeWorld>();
+            .Then<GoodByeWorld>();
     }
 }

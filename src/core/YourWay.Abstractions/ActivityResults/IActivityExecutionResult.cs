@@ -5,5 +5,6 @@ namespace YourWay.ActivityResults;
 
 public interface IActivityExecutionResult
 {
-    ValueTask ExecuteAsync(IWorkflowRunner runner, WorkflowExecutionContext workflowContext, CancellationToken cancellationToken);
+    ValueTask ExecuteAsync(IWorkflowRunner runner, WorkflowExecutionContext workflowContext,
+        CancellationToken cancellationToken);
 }
