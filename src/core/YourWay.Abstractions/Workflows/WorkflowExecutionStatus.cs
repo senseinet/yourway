@@ -1,6 +1,6 @@
 namespace YourWay.Workflows;
 
-public enum WorkflowStatus
+public enum WorkflowExecutionStatus
 {
     Idle = 0,
     Running = 1,

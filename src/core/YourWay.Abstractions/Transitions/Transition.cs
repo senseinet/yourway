@@ -10,5 +10,5 @@ public class Transition : ITransition
 
     public SourceEndpoint SourceEndpoint { get; set; }
 
-    public DestinationEndpoint DestinationEndpoint { get; set; }
+    public TargetEndpoint TargetEndpoint { get; set; }
 }

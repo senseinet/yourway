@@ -1,8 +1,17 @@
+using YourWay.Activities;
+
 namespace YourWay.Endpoints;
 
 public class Endpoint
 {
-    public string ActivityId { get; set; }
+    protected Endpoint()
+    {
+    }
 
-    public string StepId { get; set; }
+    protected Endpoint(IActivity activity)
+    {
+        Activity = activity;
+    }
+        
+    public IActivity Activity { get; set; }
 }

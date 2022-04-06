@@ -1,8 +1,9 @@
 using YourWay.Contexts;
+using YourWay.Services;
 
 namespace YourWay.ActivityResults;
 
 public interface IActivityExecutionResult
 {
-    ValueTask ExecuteAsync(ActivityExecutionContext activityExecutionContext, CancellationToken cancellationToken);
+    ValueTask ExecuteAsync(IWorkflowRunner runner, WorkflowExecutionContext workflowContext, CancellationToken cancellationToken);
 }

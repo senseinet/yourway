@@ -10,7 +10,7 @@ public class WorkflowInstance
     
     public int Version { get; set; }
     
-    public WorkflowStatus Status { get; set; }
+    public WorkflowExecutionStatus ExecutionStatus { get; set; }
     
     public Guid CorrelationId { get; set; }
     
