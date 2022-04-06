@@ -23,6 +23,10 @@ public class ActivityBase : IActivity
     
     public Variables TransientOutput { get; }
     
+    protected virtual ActivityExecutionResult OnExecute(WorkflowExecutionContext context) => Noop();
+    
+    protected NoopActivityExecutionResult Noop() => new NoopActivityExecutionResult();
+    
     public ValueTask<bool> CanExecuteAsync(WorkflowExecutionContext context, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();

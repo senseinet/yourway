@@ -1,51 +1,18 @@
-using System.ComponentModel.DataAnnotations;
+using Console.HelloWorld;
 using Console.HelloWorld.Activities;
-using Console.HelloWorld.Steps;
-using YourWay.Endpoints;
-using YourWay.Transitions;
-using YourWay.Workflows;
+using Microsoft.Extensions.DependencyInjection;
+using YourWay.Engine;
+using YourWay.Extensions;
+using YourWay.Services;
 
-var activity = new WriteLineActivity()
-{
-    IsEntryPoint = true
-};
+var services = new ServiceCollection()
+    .AddYourWay()
+    .AddActivity<HelloWorld>()
+    .AddActivity<GoodByeWorld>()
+    .BuildServiceProvider();
 
-var step1Id = Guid.NewGuid().ToString();
-var step2Id = Guid.NewGuid().ToString();
-
-var step1 = new WriteLineStep()
-{
-    Id = step1Id,
-    IsEntryPoint = true
-};
-activity.Steps.Add(step1);
-
-var step2 = new WriteLineStep()
-{
-    Id = step2Id,
-};
-activity.Steps.Add(step2);
-
-var transition = new Transition
-{
-    SourceEndpoint = new SourceEndpoint()
-    {
-        StepId = step1Id
-    },
-    DestinationEndpoint = new DestinationEndpoint()
-    {
-        StepId = step2Id
-    }
-};
-activity.Transitions.Add(transition);
-
-var workflow = new Workflow();
-workflow.Activities.Add(activity);
-
-var workflowHost = new WorkflowHost();
-
-workflowHost.Workflows.Add(workflow);
-
-await workflowHost.ExecuteWorkflows(new CancellationToken());
+// Invoke the workflow.
+var runner = services.GetService<IWorkflowRunner>();
+await runner.StartAsync<HelloWorldWorkflow>();
 
 System.Console.ReadLine();

@@ -9,11 +9,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\core\YourWay.Core\YourWay.Core.csproj" />
+    <ProjectReference Include="..\..\core\YourWay.Engine\YourWay.Engine.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Activities\" />
-    <Folder Include="Steps\" />
   </ItemGroup>
 
 </Project>
