@@ -1,6 +1,6 @@
-using YourWay.Abstractions.Activities;
+using YourWay.Activities;
 
-namespace YourWay.Abstractions.Contexts
+namespace YourWay.Contexts
 {
     public class ActivityExecutionContext
     {

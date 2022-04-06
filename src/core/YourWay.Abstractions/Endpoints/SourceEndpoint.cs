@@ -1,4 +1,4 @@
-namespace YourWay.Abstractions.Endpoints;
+namespace YourWay.Endpoints;
 
 public class SourceEndpoint : Endpoint
 {

@@ -1,4 +1,4 @@
-namespace YourWay.Abstractions.Transitions;
+namespace YourWay.Transitions;
 
 public interface ITransition
 {

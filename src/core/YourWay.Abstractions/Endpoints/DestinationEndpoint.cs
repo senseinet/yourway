@@ -1,6 +1,4 @@
-using YourWay.Abstractions.Services.Workflows;
-
-namespace YourWay.Abstractions.Endpoints;
+namespace YourWay.Endpoints;
 
 public class DestinationEndpoint : Endpoint
 {

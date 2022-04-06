@@ -1,8 +1,8 @@
-using YourWay.Abstractions.Activities;
-using YourWay.Abstractions.Contexts;
-using YourWay.Abstractions.Transitions;
+using YourWay.Activities;
+using YourWay.Contexts;
+using YourWay.Transitions;
 
-namespace YourWay.Abstractions.Workflows;
+namespace YourWay.Workflows;
 
 public class Workflow : IWorkflow
 {

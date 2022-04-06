@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Console.HelloWorld.Activities;
 using Console.HelloWorld.Steps;
-using YourWay.Abstractions.Endpoints;
-using YourWay.Abstractions.Transitions;
-using YourWay.Abstractions.Workflows;
-using YourWay.Core.Workflows;
+using YourWay.Endpoints;
+using YourWay.Transitions;
+using YourWay.Workflows;
 
 var activity = new WriteLineActivity()
 {

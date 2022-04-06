@@ -1,7 +1,6 @@
-using YourWay.Abstractions.Services.Workflows;
-using YourWay.Abstractions.Workflows;
+using YourWay.Workflows;
 
-namespace YourWay.Abstractions.Contexts;
+namespace YourWay.Contexts;
 
 public class WorkflowExecutionContext
 {

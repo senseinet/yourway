@@ -1,5 +1,5 @@
-using YourWay.Abstractions.Activities;
-using YourWay.Abstractions.Steps;
+using YourWay.Activities;
+using YourWay.Steps;
 
 namespace Console.HelloWorld.Activities;
 

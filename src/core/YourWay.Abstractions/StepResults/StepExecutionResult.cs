@@ -1,6 +1,6 @@
-using YourWay.Abstractions.Contexts;
+using YourWay.Contexts;
 
-namespace YourWay.Abstractions.StepResults;
+namespace YourWay.StepResults;
 
 public abstract class StepExecutionResult : IStepExecutionResult
 {

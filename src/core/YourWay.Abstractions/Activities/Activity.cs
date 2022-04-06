@@ -1,9 +1,9 @@
-using YourWay.Abstractions.ActivityResults;
-using YourWay.Abstractions.Contexts;
-using YourWay.Abstractions.Steps;
-using YourWay.Abstractions.Transitions;
+using YourWay.ActivityResults;
+using YourWay.Contexts;
+using YourWay.Steps;
+using YourWay.Transitions;
 
-namespace YourWay.Abstractions.Activities;
+namespace YourWay.Activities;
 
 public abstract class Activity : IActivity
 {

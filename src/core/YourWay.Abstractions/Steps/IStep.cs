@@ -1,7 +1,7 @@
-using YourWay.Abstractions.Contexts;
-using YourWay.Abstractions.StepResults;
+using YourWay.Contexts;
+using YourWay.StepResults;
 
-namespace YourWay.Abstractions.Steps;
+namespace YourWay.Steps;
 
 public interface IStep
 {

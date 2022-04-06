@@ -1,4 +1,4 @@
-namespace YourWay.Abstractions.Activities;
+namespace YourWay.Activities;
 
 public enum ActivityStatus
 {

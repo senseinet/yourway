@@ -1,6 +1,4 @@
-using YourWay.Abstractions.Workflows;
-
-namespace YourWay.Core.Workflows;
+namespace YourWay.Workflows;
 
 public interface IWorkflowHost
 {

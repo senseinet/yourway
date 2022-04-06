@@ -1,6 +1,6 @@
-using YourWay.Abstractions.Contexts;
+using YourWay.Contexts;
 
-namespace YourWay.Abstractions.ActivityResults;
+namespace YourWay.ActivityResults;
 
 public class NoopActivityExecutionResult : ActivityExecutionResult
 {

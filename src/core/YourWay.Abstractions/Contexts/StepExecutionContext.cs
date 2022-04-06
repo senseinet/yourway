@@ -1,6 +1,6 @@
-using YourWay.Abstractions.Steps;
+using YourWay.Steps;
 
-namespace YourWay.Abstractions.Contexts;
+namespace YourWay.Contexts;
 
 public class StepExecutionContext
 {

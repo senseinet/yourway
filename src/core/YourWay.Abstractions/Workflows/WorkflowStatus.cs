@@ -1,4 +1,4 @@
-namespace YourWay.Abstractions.Services.Workflows;
+namespace YourWay.Workflows;
 
 public enum WorkflowStatus
 {

@@ -1,6 +1,6 @@
-using YourWay.Abstractions.Endpoints;
+using YourWay.Endpoints;
 
-namespace YourWay.Abstractions.Transitions;
+namespace YourWay.Transitions;
 
 public class Transition : ITransition
 {

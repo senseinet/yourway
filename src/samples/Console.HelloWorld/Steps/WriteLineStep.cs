@@ -1,7 +1,6 @@
-using YourWay.Abstractions.ActivityResults;
-using YourWay.Abstractions.Contexts;
-using YourWay.Abstractions.StepResults;
-using YourWay.Abstractions.Steps;
+using YourWay.Contexts;
+using YourWay.StepResults;
+using YourWay.Steps;
 
 namespace Console.HelloWorld.Steps;
 

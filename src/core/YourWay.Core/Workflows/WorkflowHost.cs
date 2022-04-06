@@ -1,7 +1,6 @@
-using YourWay.Abstractions.Contexts;
-using YourWay.Abstractions.Workflows;
+using YourWay.Contexts;
 
-namespace YourWay.Core.Workflows;
+namespace YourWay.Workflows;
 
 public class WorkflowHost: IWorkflowHost
 {

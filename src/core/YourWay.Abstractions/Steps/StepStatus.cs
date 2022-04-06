@@ -1,4 +1,4 @@
-namespace YourWay.Abstractions.Steps;
+namespace YourWay.Steps;
 
 public enum StepStatus
 {
