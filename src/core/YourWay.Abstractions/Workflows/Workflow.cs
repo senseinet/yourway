@@ -1,7 +1,5 @@
 using YourWay.Activities;
-using YourWay.Contexts;
 using YourWay.Models;
-using YourWay.Transitions;
 
 namespace YourWay.Workflows;
 
@@ -29,5 +27,27 @@ public class Workflow
     
     public DateTime? AbortedAt { get; set; }
     
+    public ICollection<IActivity> Activities { get; } = new List<IActivity>();
+    
     public IList<Connection> Connections { get; } = new List<Connection>();
+    
+    public WorkflowInstance ToInstance()
+    {
+        var activities = Activities.ToDictionary(x => x.Id, x => x.ToInstance());
+
+        return new WorkflowInstance
+        {
+            Id = Id,
+            DefinitionId = Definition.DefinitionId,
+            Version = Definition.Version,
+            CorrelationId = CorrelationId,
+            ExecutionStatus = Status,
+            CreatedAt = CreatedAt,
+            StartedAt = StartedAt,
+            FinishedAt = FinishedAt,
+            FaultedAt = FaultedAt,
+            AbortedAt = AbortedAt,
+            Activities = activities,
+        };
+    }
 }

@@ -47,4 +47,9 @@ public class ActivityBase : IActivity
     {
         throw new NotImplementedException();
     }
+
+    public ActivityInstance ToInstance()
+    {
+        throw new NotImplementedException();
+    }
 }

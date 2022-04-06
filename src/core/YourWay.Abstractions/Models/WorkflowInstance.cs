@@ -28,5 +28,5 @@ public class WorkflowInstance
     
     public DateTime? AbortedAt { get; set; }
     
-    public IDictionary<string, ActivityInstance> Activities { get; set; } = new Dictionary<string, ActivityInstance>();
+    public IDictionary<Guid, ActivityInstance> Activities { get; set; } = new Dictionary<Guid, ActivityInstance>();
 }

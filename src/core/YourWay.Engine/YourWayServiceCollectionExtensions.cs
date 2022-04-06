@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using YourWay.Extensions;
 
 namespace YourWay.Engine;
 
@@ -8,6 +9,7 @@ public static class YourWayServiceCollectionExtensions
         this IServiceCollection services,
         Action<YourWayBuilder> configure = null)
     {
-        return services;
+        return services
+            .AddYourWayCore(configure);
     }
 }

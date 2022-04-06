@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\YourWay.Abstractions\YourWay.Abstractions.csproj" />
+      <ProjectReference Include="..\YourWay.Core\YourWay.Core.csproj" />
     </ItemGroup>
 
 </Project>

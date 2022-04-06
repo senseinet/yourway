@@ -52,4 +52,10 @@ public interface IActivity
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     ValueTask<ActivityExecutionResult> HaltedAsync(WorkflowExecutionContext context, CancellationToken cancellationToken = default);
+    
+    /// <summary>
+    /// Create instance representation of this activity
+    /// </summary>
+    /// <returns></returns>
+    ActivityInstance ToInstance();
 }
